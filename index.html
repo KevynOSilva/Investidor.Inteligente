@@ -1,248 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Investidor Fundamentalista</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investidor Inteligente - Aula Gratuita</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0c0f1f;
+      background: linear-gradient(to bottom, #000000, #0d1a33);
       color: #ffffff;
-      background-image: url("Logo%20(8).png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-    header {
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 50px 20px;
     }
-    header img {
-      max-width: 180px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
     }
+
+    .highlight {
+      color: #d6a854;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
     h1 {
       font-size: 36px;
-      color: #ffffff;
-    }
-    p.highlight {
-      font-size: 18px;
-      margin: 20px 0 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    .cta-buttons a {
-      padding: 16px 32px;
-      text-decoration: none;
-      color: #fff;
-      background-color: #1eb980;
-      border-radius: 8px;
-      font-size: 16px;
       font-weight: bold;
-      transition: background-color 0.3s;
+      margin: 20px 0;
+      line-height: 1.3;
     }
-    .cta-buttons a.secondary {
-      background-color: #444;
+
+    p.description {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      line-height: 1.5;
     }
-    .cta-buttons a:hover {
-      background-color: #17a36e;
+
+    .learning-points {
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      text-align: left;
+      line-height: 2;
     }
-    .form-section {
-      max-width: 600px;
-      margin: auto;
-      background-color: #1c1f2e;
-      padding: 40px;
-      border-radius: 12px;
+
+    .learning-points strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #fff;
       text-align: center;
     }
-    .form-section input[type="email"] {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
     }
-    .form-section button {
+
+    li {
+      border-top: 1px solid #333;
+      padding: 15px 0;
+    }
+
+    .video-wrapper {
+      max-width: 800px;
+      margin: 40px auto;
+      aspect-ratio: 16/9;
+      position: relative;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
       width: 100%;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #1eb980;
+      height: 100%;
       border: none;
-      color: #fff;
-      border-radius: 8px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #3a1f00;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 20px 40px;
+      border-radius: 12px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-top: 30px;
+      margin-bottom: 60px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 0 transparent;
+    }
+
+    .cta-button:hover {
+      box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+      transform: scale(1.03);
       cursor: pointer;
     }
-    .form-section button:hover {
-      background-color: #17a36e;
-    }
-    .download-counter {
-      font-size: 18px;
-      color: #1eb980;
-      text-align: center;
-      margin-top: 20px;
-    }
-    #testimonials {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    #testimonials_header h1,
-    #testimonials_header h2,
-    #testimonials_header p {
-      margin-bottom: 10px;
-    }
-    .testimonial-rate i {
-      color: #f5b301;
-    }
-    .testimonial-quote {
-      font-style: italic;
-      margin: 20px 0;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-    .testimonial-author img {
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       width: 50px;
       height: 50px;
-      border-radius: 50%;
     }
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: #fff;
+
+    .whatsapp img {
+      width: 100%;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 0;
+      background-color: #000;
+    }
+
+    .card {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 20px;
+      width: 280px;
+      text-align: left;
+    }
+
+    .card h3 {
+      color: #ffa500;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="Logo%20(8).png" alt="Investidor Inteligente logo">
-    <h1>Investidor Fundamentalista</h1>
-    <p class="highlight">Faça parte dos brasileiros que prosperam em meio à adversidade por meio do mercado de ações.</p>
-  </header>
-
-  <div class="cta-buttons">
-    <a href="#form">Garantir minha vaga</a>
-    <a class="secondary" href="https://wa.me/5585974017237" target="_blank">Falar com consultor</a>
+  <div class="logo">Investidor<span>Inteligente</span></div>
+  <div class="highlight">Planilha e Ebook Gratuitos:</div>
+  <h1>Aprenda uma nova técnica de<br>persuasão que vai te fazer<br>vender muito mais</h1>
+  <p class="description">Essa técnica de copywriting te ajuda a ser mais interessante, instigante, e a fazer as pessoas gostarem de você e da sua marca, e principalmente, comprarem</p>
+  <div class="learning-points">
+    <strong>Nessa aula você vai aprender:</strong>
+    <ul>
+      <li>• Qual é a grande diferença entre um marketing orientado a promessas x um marketing orientado a premissas</li>
+      <li>• Qual é a estrutura de vídeos que tiveram alcance de milhões de views, mesmo sem investimento de tráfego</li>
+      <li>• Como encontrar e organizar argumentos que são irrefutáveis para convencer quem está assistindo a comprar</li>
+    </ul>
   </div>
-
-  <div class="form-section" id="form">
-    <h2>📘 Baixe o eBook + Planilha</h2>
-    <p>Receba agora gratuitamente o guia "Comece a Investir com Inteligência" e uma planilha prática para organizar sua vida financeira.</p>
-    <form action="https://seu-serviço-de-email.com/subscribe" method="POST">
-      <input type="email" name="email" placeholder="Digite seu melhor e-mail" required>
-      <button type="submit">Quero Receber Agora</button>
-    </form>
-    <div class="download-counter">
-      📥 Mais de <span id="downloadCount">12.482</span> pessoas já baixaram!
-    </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/watch?v=R_6MeYnDr_Q" allowfullscreen></iframe>
   </div>
+  <a href="#inscricao" class="cta-button">Quero vender muito mais</a>
 
-  <main id="testimonials">
-    <div id="testimonials_header">
-      <h1>Avaliações</h1>
-      <h2>O que os clientes dizem</h2>
-      <p>Quer saber o que torna a nossa marca tão especial? Confira o que nossos clientes têm a dizer!</p>
-    </div>
-
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="testimonial-rate">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <blockquote class="testimonial-quote">"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi todas as informações de forma clara. Recomendo para todos!"</blockquote>
-          <div class="testimonial-author">
-            <img src="src/images/avatar1.jpg" alt="Imagem de uma pessoa">
-            <div class="author-info">
-              <h3>Fulano de Tal</h3>
-              <p>Cliente desde 2020</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-rate">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <blockquote class="testimonial-quote">"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi todas as informações de forma clara. Recomendo para todos!"</blockquote>
-          <div class="testimonial-author">
-            <img src="src/images/avatar2.jpg" alt="Imagem de uma pessoa">
-            <div class="author-info">
-              <h3>Fulano de Tal</h3>
-              <p>Cliente desde 2020</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="testimonial-rate">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <blockquote class="testimonial-quote">"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi todas as informações de forma clara. Recomendo para todos!"</blockquote>
-          <div class="testimonial-author">
-            <img src="src/images/avatar3.jpg" alt="Imagem de uma pessoa">
-            <div class="author-info">
-              <h3>Fulano de Tal</h3>
-              <p>Cliente desde 2020</p>
-            </div>
-          </div>
-        </div>
+  <section style="padding: 40px 20px; background: #000; color: #fff; text-align: center;">
+    <h2 style="font-size: 28px; font-weight: 700; margin: 0 auto 20px; max-width: 800px;">O Light Copy funciona para...</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>01</h3>
+        <h4>Para quem já é Copywriter</h4>
+        <p>Com a metodologia Light Copy você aprenderá que os textos podem ser divertidos, emocionantes, persuasivos e prazerosos de escrever.</p>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="card">
+        <h3>02</h3>
+        <h4>Se você quer ser Copywriter profissional</h4>
+        <p>Essa é uma profissão apaixonante, que ganha bem e convence seu leitor com as técnicas certas.</p>
+      </div>
+      <div class="card">
+        <h3>03</h3>
+        <h4>Quem gosta de escrever</h4>
+        <p>O LC também é para pessoas comuns, que têm facilidade com as palavras e querem explorar melhor esse talento.</p>
+      </div>
+      <div class="card">
+        <h3>04</h3>
+        <h4>Influenciadores</h4>
+        <p>É para você que já tem um bom posicionamento, mas quer se diferenciar dos demais.</p>
+      </div>
+      <div class="card">
+        <h3>05</h3>
+        <h4>Especialista</h4>
+        <p>Para você que é especialista em um nicho específico e já tem um produto para vender. O LC vai te ajudar a alcançar mais pessoas e vender mais.</p>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    let count = 12482;
-    setInterval(() => {
-      count += Math.floor(Math.random() * 3);
-      document.getElementById("downloadCount").textContent = count.toLocaleString("pt-BR");
-    }, 4000);
-
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      slidesPerView: 1,
-      spaceBetween: 30,
-      breakpoints: {
-        768: {
-          slidesPerView: 2
-        },
-        1024: {
-          slidesPerView: 3
-        }
-      }
-    });
-  </script>
+  <a href="https://wa.me/85974017237" class="whatsapp" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 </body>
 </html>
