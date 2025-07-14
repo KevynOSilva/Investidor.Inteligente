@@ -82,28 +82,49 @@
       border: none;
     }
 
-    .cta-button {
-      display: inline-block;
-      background: #94ffa5;
-      color: #000;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 20px 40px;
-      border-radius: 30px;
-      font-size: 14px;
-      box-shadow: 0 4px 10px rgba(148, 255, 165, 0.4);
-      letter-spacing: 1px;
-      margin-top: 30px;
-      margin-bottom: 60px;
-      transition: all 0.3s ease-in-out;
-      text-decoration: none;
-    }
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #00ffa3, #0077ff);
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    border-radius: 30px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease, color 0.25s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .cta-button:hover {
-      box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
-      transform: scale(1.03);
-      cursor: pointer;
-    }
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 60%);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    z-index: 0;
+  }
+
+  .cta-button:hover::before {
+    transform: scale(1);
+  }
+
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.5);
+    filter: brightness(1.1);
+    color: #ffffff; /* força o branco puro */
+    cursor: pointer;
+  }
 
     .whatsapp {
       position: fixed;
@@ -172,10 +193,10 @@
 <body>
   <div class="logo">Investidor<span>Inteligente</span></div>
   <div class="highlight">Planilha e Ebook Gratuitos</div>
-  <h1>Aprenda tudo sobre<br>educação financeira para fazer<br>seu dinheiro trabalhar por você</h1>
-  <p class="description">Técnicas de gestão pessoal de finanças que te ajuda a manter a disciplina e alcançar sua liberdade</p>
+  <h1>Bolsa de Valores para Iniciantes: <br>do Zero ao Primeiro Investimento</h1>
+  <p class="description">Você não precisa ser rico ou um gênio das finanças pra começar. Só precisa da orientação certa e um dia, vou te mostrar como</p>
   <div class="learning-points">
-    <strong>Nessa aula você vai aprender:</strong>
+    <strong> Comigo você vai aprender:</strong>
     <ul>
       <li>• Qual é o verdadeiro "jogo do dinheiro" e como ele influencia suas decisões financeiras?</li>
       <li>• O que realmente está te impedindo de alcançar a riqueza — e como superar essas barreiras?</li>
@@ -194,7 +215,7 @@
       allowfullscreen>
     </iframe>
   </div>
-  <a href="#inscricao" class="cta-button">Quero participar da Mentoria!</a>
+  <a href="#inscricao" class="cta-button">Começar Agora!</a>
 
   <section style="background: #1a1a1a; padding: 40px 20px; color: #fff; text-align: center;">
 
@@ -205,9 +226,9 @@
         <!-- Ícone pessoa com ondas -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="36" height="36"><path d="M16.5 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm10.172 3.657a6.987 6.987 0 0 1 0 2.686 1 1 0 0 1-1.943-.511 4.987 4.987 0 0 0 0-1.663 1 1 0 1 1 1.943-.512zm-11.344 0a1 1 0 1 1 1.943.512 4.987 4.987 0 0 0 0 1.663 1 1 0 1 1-1.943.511 6.987 6.987 0 0 1 0-2.686zM12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg>
       </div>
-      <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Feedback de profissionais</h3>
+      <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Acesso vitalício ao curso e futuras atualizações</h3>
       <p style="font-weight: 300; font-size: 14px; line-height: 1.4;">
-        Faça parte da nossa comunidade de investidores, para trocar ideias, fazer network e melhorar a eficiência dos seus aportes!
+        Você terá acesso ao conteúdo sempre que precisar, incluindo futuras versões e melhorias.
       </p>
     </div>
 
@@ -216,9 +237,9 @@
         <!-- Ícone lápis com papel -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="36" height="36"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
       </div>
-      <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">+500 referências de Copy</h3>
+      <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Bônus Exclusivo </h3>
       <p style="font-weight: 300; font-size: 14px; line-height: 1.4;">
-        Ao adquirir o curso você ganha o acesso ao meu acervo de referências: Relatório Mensal de Ações, Planilha de gestão de custos + Ebook.
+        Receba uma apostila completa com os principais indicadores usados por investidores de sucesso para identificar boas ações e tomar decisões com confiança, mesmo que você esteja começando agora.
       </p>
     </div>
 
@@ -227,9 +248,9 @@
         <!-- Ícone envelope -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="36" height="36"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18v-9.5l8 7 8-7V18H4z"/></svg>
       </div>
-      <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Suporte em até 24h</h3>
+      <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Suporte rápido e humano</h3>
       <p style="font-weight: 300; font-size: 14px; line-height: 1.4;">
-        Tire todas as suas dúvidas técnicas sobre o curso, temos um time treinado para te ajudar.
+        Ficou com dúvidas? Nosso time está preparado para te responder em até 24h com atenção real, nada de respostas genéricas ou automáticas. Aqui você não fica sozinho.
       </p>
     </div>
 
@@ -240,7 +261,7 @@
       </div>
       <h3 style="font-weight: 600; font-size: 18px; margin-bottom: 10px;">Garantia de 15 dias</h3>
       <p style="font-weight: 300; font-size: 14px; line-height: 1.4;">
-        Você poderá pedir seu reembolso em até 15 dias e ter todo o seu dinheiro de volta
+        Teste o curso sem risco! Se em até 15 dias você sentir que o conteúdo não é pra você, é só pedir o reembolso e devolvemos 100% do valor, sem burocracia.
       </p>
     </div>
 
@@ -249,44 +270,37 @@
 </section>
 
   <section style="padding: 40px 20px; background: #000; color: #fff; text-align: center;">
-    <h2 style="font-size: 28px; font-weight: 700; margin: 0 auto 20px; max-width: 800px;">O Light Copy funciona para...</h2>
+    <h2 style="font-size: 28px; font-weight: 700; margin: 0 auto 20px; max-width: 800px;">💡 Este curso é pra você que...</h2>
     <div class="cards-container">
       <div class="card">
         <h3>01</h3>
-        <h4>Para quem já é Copywriter</h4>
-        <p>Com a metodologia Light Copy você aprenderá que os textos podem ser divertidos, emocionantes, persuasivos e prazerosos de escrever.</p>
+        <h4>Nunca investiu na vida</h4>
+        <p>Você ainda guarda dinheiro na poupança ou deixa parado na conta porque tem medo de errar ou não sabe por onde começar..</p>
       </div>
       <div class="card">
         <h3>02</h3>
-        <h4>Se você quer ser Copywriter profissional</h4>
-        <p>Essa é uma profissão apaixonante, que ganha bem e convence seu leitor com as técnicas certas.</p>
+        <h4>Quer aprender a investir sem complicação</h4>
+        <p>Você não aguenta mais linguagem técnica ou promessas milagrosas. Quer um passo a passo simples, que funcione de verdade</p>
       </div>
       <div class="card">
         <h3>03</h3>
-        <h4>Quem gosta de escrever</h4>
-        <p>O LC também é para pessoas comuns, que têm facilidade com as palavras e querem explorar melhor esse talento.</p>
+        <h4>Tem pouco dinheiro, mas muita vontade de começar</h4>
+        <p>Você acredita que dá pra investir mesmo com pouco, e só precisa entender como fazer isso com segurança e consistência.</p>
       </div>
       <div class="card">
         <h3>04</h3>
-        <h4>Influenciadores</h4>
-        <p>É para você que já tem um bom posicionamento, mas quer se diferenciar dos demais.</p>
+        <h4>Ganha razoavelmente bem, mas não vê o dinheiro render</h4>
+        <p>Você trabalha, paga as contas… e quando vê, sobrou quase nada. Já percebeu que só guardar não basta: é hora de investir.</p>
       </div>
       <div class="card">
         <h3>05</h3>
-        <h4>Especialista</h4>
-        <p>Para você que é especialista em um nicho específico e já tem um produto para vender. O LC vai te ajudar a alcançar mais pessoas e vender mais.</p>
+        <h4>Já tentou investir, mas travou ou se frustrou</h4>
+        <p>Você viu vídeos, abriu conta em corretora, mas não entendeu nada ou desistiu com medo de perder dinheiro.</p>
       </div>
     </div>
-      <a href="#inscricao" class="cta-button">Entrar para o Light Copy</a>
+      <a href="#inscricao" class="cta-button">Começar Agora!</a>
   </section>
 
-  <div class="bloco-imagens">
-    <h2>Saber se comunicar é fundamental para qualquer pessoa</h2>
-    <img src="SEU-LINK-DE-IMAGEM-DE-ARTIGOS-AQUI" alt="Citações de artigos sobre comunicação">
-
-    <h2>As oportunidades são infinitas com o Light Copy</h2>
-    <img src="SEU-LINK-DE-IMAGEM-DE-TESTEMUNHOS-AQUI" alt="Depoimentos e oportunidades com Light Copy">
-  </div>
 
 
   <a href="https://wa.me/85974017237" class="whatsapp" target="_blank">
@@ -295,36 +309,35 @@
 
   <section style="background-color:#000; color:#fff; padding:40px 20px; font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto;">
   <h2 style="text-align:center; margin-bottom: 30px; font-weight: 600; font-size: 22px;">
-    O segredo do Light Copy
+    O método Investidor Inteligente
   </h2>
   <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
     
     <!-- Bloco esquerdo -->
     <div style="background-color:#1a1a1a; padding: 25px 20px; border-radius: 8px; flex: 1 1 350px; max-width: 420px; box-sizing: border-box;">
       <h3 style="color:#fff; font-weight: 600; font-size: 18px; margin-bottom: 20px; text-align:center;">
-        Se você está cansado de<br>
-        <span style="font-weight: 400; font-size: 14px;">(Copy tradicional)</span>
+        ✖️ Se você está cansado de<br>
+        <span style="font-weight: 400; font-size: 14px;">(Investir sem assistência)</span>
       </h3>
       <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.5; color:#ddd;">
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#e74c3c; font-weight: bold;">✕</span> Empilhamento de gatilhos mentais
+          <span style="color:#e74c3c; font-weight: bold;">✕</span> Ter que adivinhar onde investir e sempre achar que vai perder dinheiro
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#e74c3c; font-weight: bold;">✕</span> Estrutura de copy engessada e igual a todas
+          <span style="color:#e74c3c; font-weight: bold;">✕</span> Guardar na poupança e ver o dinheiro perder valor
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#e74c3c; font-weight: bold;">✕</span> CTAs invasivas e chatas
+          <span style="color:#e74c3c; font-weight: bold;">✕</span> Procrastinar por medo de errar ou não saber por onde começar
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#e74c3c; font-weight: bold;">✕</span> Conteúdos, páginas e vídeos sem criatividade (e sem retenção)
+          <span style="color:#e74c3c; font-weight: bold;">✕</span> Depender de vídeos soltos no YouTube que não explicam tudo
         </li>
         <li style="display: flex; align-items: center; gap: 8px;">
-          <span style="color:#e74c3c; font-weight: bold;">✕</span> Textos cansativos que ninguém lê até o final
+          <span style="color:#e74c3c; font-weight: bold;">✕</span> Ouvir termos difíceis e sentir que investir “não é pra você”
         </li>
       </ul>
     </div>
 
-    <!-- Bloco direito -->
     <div style="background-color:#1a1a1a; padding: 25px 20px; border-radius: 8px; border: 1.5px solid #f7941d; flex: 1 1 350px; max-width: 420px; box-sizing: border-box;">
       <h3 style="color:#a17430; font-weight: 600; font-size: 18px; margin-bottom: 20px; text-align:center;">
         E está buscando:<br>
@@ -332,48 +345,191 @@
       </h3>
       <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.5; color:#b89b4f;">
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Pessoas, de qualquer profissão, que querem transformar palavras em uma fonte de renda
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 🔒 Segurança para começar sem medo de perder dinheiro
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Uso da Associação Criativa para deixar os textos interessantes
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 📈 Resultados reais mesmo com aportes pequenos
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Processo Criativo de roteiros que vendem milhões
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 📊 Um plano de ação prático, sem precisar entender economia
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Estrutura de Texto Persuasivo, sem ser chato e forçado
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 📆 Rotina simples para investir de forma consistente, todo mês
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Lógica de Premissas para deixar seus argumentos incontestáveis
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 📚 Explicações em português claro, sem "economês" e enrolação
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Construção de Ofertas que despertam desejo
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 💬 Suporte de verdade para tirar dúvidas e te acompanhar!
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Gatilhos Mentais usados na hora certa
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 💸 Sair da poupança e fazer o dinheiro render de verdade
         </li>
         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Aplicações Práticas de todas as técnicas e conceitos
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 🧠 Educação financeira aplicada à vida real, não só teoria
         </li>
         <li style="display: flex; align-items: center; gap: 8px;">
-          <span style="color:#94ffa5; font-weight: bold;">✓</span> Repertório, referências e swipe file para usar na sua copy
+          <span style="color:#94ffa5; font-weight: bold;">✓</span> 🎯 Saber onde colocar o dinheiro hoje, pensando no futuro com clareza
         </li>
       </ul>
     </div>
-
   </div>
 
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/css/styles.css">
+    <title>Avaliações</title>
+</head>
+<body>
+    <main id="testimonials">
+        <div id="testimonials_header">
+            <h1>Avaliações</h1>
+            <h2>
+                O que os clientes dizem
+            </h2>
+            <p>
+                Quer saber o que torna a nossa marca tão especial?
+                Confira o que nossos clientes têm a dizer!
+            </p>
+        </div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        "Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+						todas as informações de forma clara. Recomendo para todos!"
+                    </blockquote>
+
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="src/images/avatar1.jpg" alt="Imagem de uma pessoa">
+                        </div>
+
+                        <div class="author-info">
+                            <h3>Fulano de Tal</h3>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        "Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+						todas as informações de forma clara. Recomendo para todos!"
+                    </blockquote>
+
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="src/images/avatar2.jpg" alt="Imagem de uma pessoa">
+                        </div>
+
+                        <div class="author-info">
+                            <h3>Fulano de Tal</h3>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        "Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+						todas as informações de forma clara. Recomendo para todos!"
+                    </blockquote>
+
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="src/images/avatar3.jpg" alt="Imagem de uma pessoa">
+                        </div>
+
+                        <div class="author-info">
+                            <h3>Fulano de Tal</h3>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <blockquote class="testimonial-quote">
+                        "Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+						todas as informações de forma clara. Recomendo para todos!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="src/images/avatar1.jpg" alt="Imagem de uma pessoa">
+                        </div>
+
+                        <div class="author-info">
+                            <h3>Fulano de Tal</h3>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/javascript/script.js"></script>
+
+
+
+
+
+
+
   <div style="text-align:center; margin-top: 40px;">
-    <button style="background-color:#f7941d; border:none; padding: 14px 40px; border-radius: 5px; color:#000; font-weight: 700; cursor: pointer; font-size: 14px; box-shadow: 0 0 12px #f7941d;">
-      ENTRE PARA O LIGHT COPY
-    </button>
+    
+    <a href="#inscricao" class="cta-button">Começar Agora!</a>
+
   </div>
 </section>
 <section style="background-color: #0c0c0c; color: white; padding: 60px 20px;">
   <h2 style="font-size: 2rem; text-align: center; margin-bottom: 40px;">O que tem no Light Copy?</h2>
 
   <div style="max-width: 960px; margin: 0 auto;">
-    <!-- Replique este bloco para cada módulo -->
     <div style="display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap;">
       <img src="IMAGEM-URL-1.jpg" alt="Módulo 1" style="width: 200px; border-radius: 8px;">
       <div>
@@ -383,8 +539,6 @@
       </div>
     </div>
 
-    <!-- Repita para os demais módulos substituindo título, aulas e imagens -->
-    <!-- Você pode duplicar o bloco acima com os novos conteúdos -->
   </div>
 </section>
 <section style="background-color: #000; color: white; padding: 60px 20px;">
@@ -422,8 +576,8 @@
   </div>
 
   <div style="text-align: center; margin-top: 40px;">
-    <a href="#" style="display: inline-block; padding: 15px 30px; background: linear-gradient(to right, #ff9900, #ff6600); color: white; font-weight: bold; border-radius: 5px; text-decoration: none;">
-      ENTRE PARA O LIGHT COPY
+      <a href="#inscricao" class="cta-button">Começar Agora!</a>
+
     </a>
   </div>
 </section>
