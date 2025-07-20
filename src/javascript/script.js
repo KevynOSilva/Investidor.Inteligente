@@ -1,6 +1,8 @@
 var swiper = new Swiper(".swiper", {
     loop: true,
     grabCursor: true,
+    autoHeight: true, // ← ESSENCIAL para ajustar à altura do conteúdo!
+
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
